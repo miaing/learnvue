@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--当条件为false时，压根不会显示在DOM中-->
+        <h1 v-if="display">隐藏第一个</h1>
+        <!--当条件为false时，仅仅只是将元素的display属性设置为none而已-->
+        <h1 v-show="display">隐藏第二个</h1>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                display:false
+            }
+        })
+    </script>
+</body>
+</html>

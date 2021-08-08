@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <cpn v-bind:cmovies="movies"></cpn>
+    </div>
+    <template id = "cpn">
+        <div>
+            <ul>
+                <li v-for = "item in cmovies">{{item}}</li>
+            </ul>
+        </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        //1.父传子：props
+        const cpn = {
+            template:'#cpn',
+            props:['cmovies']
+        }
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好，我是某某某',
+               // name: 'luoyuying'
+               movies:['海贼王','海尔兄弟']
+            },
+            components:{
+                cpn
+            }
+        })
+    </script>
+</body>
+</html>

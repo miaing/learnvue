@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{num}}</h1>
+        <button @click="btnClick">按钮</button>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                num:['A','G','C','E','D']
+            },
+            methods: {
+                btnClick(){
+                    //1. .push在数组的最后添加元素
+                    //this.num.push("F")
+                    //2.删除数组中的最后一个元素
+                    //this.num.pop()
+                    //3.删除元素中的第一个
+                    //this.num.shift()
+                    //4.在数组的最前面添加一个元素
+                    //this.num.unshift("csvnj")
+                    //5.可以删除/插入/替换数组中的任意位置的元素，第一个参数是从哪里开始删除，第二个元素是删除及格元素，第二个元素也可以添加元素
+                   // this.num.splice(2,2)
+                   //6.排序
+                   //this.num.sort()
+                   //7.反转数据
+                   this.num.reverse()
+
+
+                }
+                
+            },
+        })
+    </script>
+</body>
+</html>

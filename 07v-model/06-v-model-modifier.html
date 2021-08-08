@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--1.修饰符lazy表示name内的内容不再跟随着表单内的内容变化而变化
+        <input type="text" v-model.lazy="name">{{name}} 
+
+            2.修饰符number表示输入的内容必须是数字，以及类型也是number
+        <input type="number" v-model.number="age">
+        <h2>{{age}} -{{ typeof age}}</h2>-->
+        <!--3.修饰符trim表示清除内部的空格-->
+        <input type="text" v-model.trim="name">
+
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好，我是某某某',
+                name: 'luoyuying',
+                age:0
+            }
+        })
+    </script>
+</body>
+</html>

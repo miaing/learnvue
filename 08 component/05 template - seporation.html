@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+      <mycpn></mycpn>
+    </div>
+      <!--第一种分离方法
+    <script type="text/x-template" id="one">
+              第一种分离方法
+    <div>
+      <h2>标题</h2>
+      <p>段落一</p>
+      <p>段落二</p>
+    </div>
+    </script>-->
+    <template id="myCpn">
+      <!--2.第二种分离方法-->
+      <div>
+        <h2>标题</h2>
+        <p>段落一</p>
+        <p>段落二</p>
+      </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        //data: {
+        //message: '你好，我是某某某',
+        //name: 'luoyuying'
+        //},
+        components: {
+          'mycpn': {
+            template: '#myCpn'
+          }
+        }
+      })
+    </script>
+</body>
+</html>

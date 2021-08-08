@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--1.checkbox 的单选框应用
+        <label for="agree">
+            <input type="checkbox" id="agree" v-model="isagree">同意协定
+        </label>
+        <h2>您的选择是：{{isagree}}</h2>
+        <button :disabled="!isagree">下一步</button>-->
+
+        <!--2.多选框xheckbox的应用-->
+            <input type="checkbox" value="篮球" v-model="hobbies">篮球
+            <input type="checkbox" value="足球" v-model="hobbies">足球
+            <input type="checkbox" value="橄榄球" v-model="hobbies">橄榄球
+            <input type="checkbox" value="棒球" v-model="hobbies">棒球
+            <h2>您的爱好是：{{hobbies}}</h2>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好，我是某某某',
+                hobbies:[]
+            }
+        })
+    </script>
+</body>
+</html>

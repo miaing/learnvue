@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+       <cpn></cpn>
+       <cpn>
+           <template slot-scope="slot">
+               <!--1.方法一：-->
+              <!-- <span v-for="item in slot.data"> {{item}}+</span>-->
+              <!--2.方法二：-->
+              <span >{{slot.data.join('+')}}</span>
+           </template>
+       </cpn>
+       <cpn></cpn>
+    </div>
+    <template id="cpn">
+        <div>
+            <slot :data="pLanguage">
+                <ul>
+                    <li v-for="item in pLanguage">{{item}}</li>
+                </ul>
+            </slot>
+        </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好，我是某某某',
+                //name: 'luoyuying'
+            },
+            components:{
+                cpn:{
+                    template:'#cpn',
+                    data(){
+                        return{
+                            pLanguage:["英语","法语","日语","汉语"]
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+</html>

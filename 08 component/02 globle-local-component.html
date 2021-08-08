@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+       <cpn></cpn>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const cpnC = Vue.extend({
+            //创建组件构造器
+            template:`
+            <div>
+                <h2>标题</h2>
+                <p>段落一</p>
+                <p>段落二</p>
+            </div>`
+        })
+        //注册组件(以下创建的是全局组件)
+        //Vue.component('cpn',cpnC)
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好，我是某某某',
+                name: 'luoyuying'
+            },
+            //局部组件 
+            components:{
+                cpn: cpnC
+            }
+        })
+    </script>
+</body>
+</html>

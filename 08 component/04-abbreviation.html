@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <cpn1></cpn1>
+        <cpn2></cpn2>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        Vue.component('cpn1',{
+            //1.全局组件语法糖
+            template:`
+            <div>
+                <h2>标题</h2>
+                <p>段落一，哈哈哈哈</p>
+
+            </div>`
+        })
+        //2.局部组件语法糖
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好，我是某某某',
+                //name: 'luoyuying'
+            },
+            components:{
+                'cpn2':{
+                    template:`
+                        <div>
+                            <h2>标题</h2>
+                            <p>段落二，哈哈哈哈</p>
+                        </div>`
+                }
+            }
+        })
+    </script>
+</body>
+</html>

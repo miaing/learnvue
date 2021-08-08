@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-on的修饰符</title>
+</head>
+<body>
+    <div id="app">
+        <!--1. .stop停止冒泡
+        <div @click="divClick">
+            aaaa
+            <button @click.stop="btnClick">按钮</button>
+        </div>\
+        <br>
+            2.阻止默认事件，用.prevent
+        <form action="baidu">
+            <input type="submit" value="按钮" @click.prevent="submitClick">
+        </form>
+            3.监听某个按键的键帽-->
+        <input type="text" @keyup.enter="keyup">
+        
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好，我是某某某',
+                name: 'luoyuying'
+            },
+            methods: {
+               /** btnClick(){
+                    console.log("btnClick")
+                },
+                divClick(){
+                    console.log("divClick")
+                },
+                submitClick(){
+                    console.log("submitClick")
+                }**/
+                keyup(){
+                    console.log("keyup")
+                }
+            },
+        })
+    </script>
+</body>
+</html>

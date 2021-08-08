@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <cpn></cpn>
+        <cpn><i>我是i标签</i></cpn>
+        <cpn></cpn> 
+        <cpn></cpn>
+    </div>
+    <template id="cpn">
+        <div>
+            <h1>我是标题</h1>
+            <p>我是段落一，哈哈</p>
+            <slot>
+                <h1>我是标题二</h1>
+                <p>我是段落二，呵呵呵 </p>
+            </slot>
+        </div>
+    </template>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好，我是某某某',
+                
+            },
+            components:{
+                cpn:{
+                    template:'#cpn'
+                }
+            }
+        })
+    </script>
+    
+</body>
+</html>

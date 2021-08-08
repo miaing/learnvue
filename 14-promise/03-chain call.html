@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        new Promise ((resolve,reject) => {
+        //resolve(res ,'我是第一个需要毁掉的函数')
+        setTimeout(() =>{
+            resolve('aaa')
+        },1000)
+        }).then(res =>{
+            console.log(res, '我是第一个aaa需要拼接')
+            return new Promise (resolve =>{
+                resolve(res+'111')
+            })
+        }).then(res =>{
+            console.log(res,'我是第二层代码')
+            //第一种简便方式
+            return Promise.resolve(res+'222')
+            
+            
+        }).then(res =>{
+            console.log(res,'我是第三层代码')
+            //第二种简便方式
+            return res+'333'
+        })
+
+    </script>
+</body>
+</html>

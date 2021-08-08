@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!--1.select 只能选择一个的应用
+        <select name="abc" v-model="fruit">
+            <option value="香蕉">香蕉</option>
+            <option value="苹果">苹果</option>
+            <option value="西瓜">西瓜</option>
+            <option value="猕猴桃">猕猴桃</option>
+        </select>-->
+        <select name="abc" v-model="fruit" multiple>
+            <option value="香蕉">香蕉</option>
+            <option value="苹果">苹果</option>
+            <option value="西瓜">西瓜</option>
+            <option value="猕猴桃">猕猴桃</option>
+        </select>
+        <h2>您选择的水果是：{{fruit}}</h2>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好，我是某某某',
+                fruit:"苹果",
+                fruit:[]
+            }
+        })
+    </script>
+</body>
+</html>

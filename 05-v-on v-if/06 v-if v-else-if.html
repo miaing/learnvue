@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2 v-if="score>=90">优秀</h2>
+        <h2 v-else-if="score>=80">良好</h2>
+        <h2 v-else="score>=60">及格</h2>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好，我是某某某',
+                score:90,
+                result(){
+                    let showMessage = ''
+                    if(this.showMessage>=90){
+                        showMessage="优秀"
+                    }else if(this.showMessage>=80){
+                        showMessage="良好"
+                    }else{
+                        showMessage="及格"
+                    }
+                    return showMessage
+                }
+            }
+        })
+    </script>
+</body>
+</html>

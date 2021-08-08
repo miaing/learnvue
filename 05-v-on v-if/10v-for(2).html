@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <!--1.当遍历对象时，如果只获取一个对象时，一般获取到的是value
+            <li v-for="item in info">{{item}}</li>
+
+                2.当获取key和value时，格式是：（value，key）
+            <li v-for="(value,key) in info">{{key}}-{{value}}</li>
+                3.当获取key和value和index时，格式是：（value，key,index）-->
+            <li v-for="(value,key,index) in info">{{index}}-{{key}}-{{value}}</li>
+
+        </ul>
+    </div>
+    <script src="../js/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: '#app',
+            data:{
+                info: {
+                    name: 'luoyuying',
+                    age:'20',
+                    height:'160'
+            }
+            }
+            
+        })
+    </script>
+</body>
+</html>
